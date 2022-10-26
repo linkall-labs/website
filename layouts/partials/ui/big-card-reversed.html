@@ -1,0 +1,20 @@
+<div class="big-card {{.extraCssClass}}" data-aos="fade-up">
+  <div class="big-card-wrapper">
+      <div class="content">
+          <div class="content-wrapper">
+              <div class="title">
+                  <h4>{{.title}}</h4>
+                  <p>{{.desc | safeHTML}}</p>
+                  {{ if .linkHref }}
+                  <a href="{{.linkHref}}" class="featured-button" {{ if .blank }} target="_blank" {{ end }}>
+                    <span>{{.linkText | safeHTML }}</span>
+                  </a>
+                  {{ end }}
+              </div>
+          </div>
+      </div>
+      <div class="image">
+          <div class="image-wrapper" style="background-image: url('{{.Site.BaseURL}}{{.image}}')"></div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+.post {
+
+	.post-header { 
+    height: 550px; 
+    padding-bottom: 30px;   
+		background-size: cover;
+		background-position: center;
+		.container { 
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+			.date { 
+        color: $blue;
+			}
+
+			.title { 
+
+				h1 { 
+          font-size: 38px;
+          color: white;
+				}
+			}
+
+			.tags { 
+
+				.tag { 
+
+					span { 
+            color: $blue;
+					}
+				}
+			}
+		}
+	}
+
+	.post-body {
+		$colSidesWidth: 300px;		
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 120px 0;
+		@include breakpoint(md) {
+			padding: 0;
+			padding-bottom: 60px;
+		}
+		.post-body-content { 
+			flex: 1;
+			word-break: break-all;
+			width: 780px;
+			@include breakpoint(md) {
+				width: 100%;
+			}
+			p { 
+
+			}
+
+			ul{
+				
+			}
+			li{
+				word-break: break-all;
+			}
+
+			h2 { 
+				color: $blue;
+				font-size: 22px;
+				border-bottom: 1px solid #ccc;
+				padding: 30px 0;
+				margin-bottom: 30px;
+			}
+			img{
+				width: 100%;
+				margin: 60px 0;
+			}
+		}
+		.post-categories{
+			width: $colSidesWidth;
+		}
+		.post-sidebar {			
+			width: $colSidesWidth;
+			padding-left: 60px;
+			padding-top: 60px;
+			@include breakpoint(md) {
+				padding: 0 50px;
+				width: $colSidesWidth;
+			}
+			@include breakpoint(xs) {
+				padding: 0 30px;
+			}
+
+			.post-sidebar-anchors {
+				@include breakpoint(md) {
+					display: none;
+				}
+				.post-sidebar-ancho {
+					cursor: pointer;
+					&:not(:last-child){
+						margin-bottom: 15px;
+					}
+					span {
+						font-size: 18px;
+						color: $blue;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+
+}
+

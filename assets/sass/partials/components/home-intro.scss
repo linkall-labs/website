@@ -1,0 +1,64 @@
+.home-intro { 
+  margin: 100px 0;
+  @include breakpoint(md) {
+    margin: 60px 0 60px 0;
+  }
+	.home-intro-wrapper { 
+    display: flex;
+    align-items: center;
+    @include breakpoint(md) {
+      flex-wrap: wrap;
+      padding: 0 15px;
+    }
+    > div{
+      width: 50%;
+      @include breakpoint(md) {
+        width: 100%;
+      }
+    }
+		.content { 
+      
+      > img{
+        width: 300px;
+        margin-bottom: 30px;
+        @include breakpoint(xs) {
+          width: 200px;
+        }
+      }
+
+			h1 { 
+        font-size: 82px;
+        background: $blue-bright;
+        background: linear-gradient(to right, $blue-bright 0%, #5E85C9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+        margin-bottom: 30px;
+			}
+
+			h2 { 
+        font-size: 36px;
+        line-height: 50px;
+        margin: 0;
+        color: $blue;
+			}
+
+			p { 
+        font-size: 20px;
+        line-height: 1.3em;
+			}
+		}
+
+      #animation_container {
+        height: auto !important;
+        width: 100% !important;
+        canvas {
+          height: auto !important;
+          width: 100% !important;
+          @include breakpoint(md) {
+            margin-left: 0%;
+          }
+        }
+      }
+	}
+}

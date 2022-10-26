@@ -1,0 +1,23 @@
+{{- define "main" -}}
+    <div class="archive">
+        <div class="archive-header">
+            {{
+                partial "ui/featured-title.html" 
+                (dict 
+                    "title" "Connect the Future of Cloud Computing with Vanus"  
+                    "subtitle" "The future of Cloud Computing is Serverless. Vanus is the leading Event Platform for the Serverless era."                          
+                )
+                }}
+        </div>
+        <div class="archive-wrapper">
+            <!--TODO: FOREACH CON EL COMPONENTE-->
+            {{
+                partial "ui/featured-title.html" 
+                (dict 
+                    "title" "Connect the Future of Cloud Computing with Vanus"  
+                    "subtitle" "The future of Cloud Computing is Serverless. Vanus is the leading Event Platform for the Serverless era."                          
+                )
+                }}
+        </div>
+    </div>
+{{ end }}

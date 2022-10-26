@@ -1,0 +1,47 @@
+<head>
+<title>Vanus - Serverless Event Platform for easily building Event-Driven Architecture (EDA) Applications.</title>
+<meta charset="UTF-8">
+<meta name="description" content="Vanus provides enterprises and organizations an innovative Platform for Collecting, Storing, Distributing, and Processing Events at Scale.">
+<meta name="keywords" content="serverless, event, platform">
+<meta property="og:title" content="Vanus - Serverless Event Platform for easily building Event-Driven Architecture (EDA) Applications.">
+<meta property="og:site_name" content="Vanus - Serverless Event Platform">
+<meta property="og:url" content="{{.Site.BaseURL}}">
+<meta property="og:description" content="Vanus provides enterprises and organizations an innovative Platform for Collecting, Storing, Distributing, and Processing Events at Scale.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{.Site.BaseURL}}images/test-post-img.jpg">
+<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/urb7pff.css">
+<link rel="apple-touch-icon" sizes="57x57" href="{{.Site.BaseURL}}images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="{{.Site.BaseURL}}images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="{{.Site.BaseURL}}images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="{{.Site.BaseURL}}images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="{{.Site.BaseURL}}images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="{{.Site.BaseURL}}images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="{{.Site.BaseURL}}images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="{{.Site.BaseURL}}images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="{{.Site.BaseURL}}images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="{{.Site.BaseURL}}images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{.Site.BaseURL}}images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="{{.Site.BaseURL}}images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{.Site.BaseURL}}images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+{{ $css := resources.Get "sass/master.scss" }}
+{{ $css := $css | toCSS  }}
+
+{{ $themeJs := resources.Get "js/theme.js" | js.Build "js/theme.js" }}
+{{ $orbJs := resources.Get "js/orb-canvas.js" }}
+
+<link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+<script type="text/javascript" src="{{ $themeJs.RelPermalink }}" defer></script>
+<script type="module" src="{{ $orbJs.RelPermalink }}"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>

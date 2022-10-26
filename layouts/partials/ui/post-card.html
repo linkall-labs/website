@@ -1,0 +1,27 @@
+<div class="post-card" data-aos="fade-up">
+  {{ if .image }}
+  <div class="image">
+      <img src="{{.Site.BaseURL}}{{.image}}" alt="{{ replace .title " " "-" }}">
+  </div>
+  {{ end }}
+  {{ if .icon }}
+  <div class="icon">
+    <img src="{{.Site.BaseURL}}{{.icon}}" alt="{{ replace .title " " "-" }}">
+  </div>
+  {{ end }}
+  
+  <div class="content {{ if .icon }} content-icon {{ end }}">
+      {{ if .date }}
+      <span class="date">{{.date}}</span>
+      {{end}}
+      {{ if .title }}
+      <h3>{{ substr .title 0 42}} {{if gt (len .title) 43}} [...]{{end}}</h3>
+      {{end}}
+      <p>{{ substr .desc 0 82 }} {{if gt (len .desc) 83}} [...]{{end}}</p>      
+      <div class="link">
+          <a href="{{.linkHref}}" class="primary-button">
+            <span>{{.linkText}}</span>
+          </a>
+      </div>
+  </div>
+</div>

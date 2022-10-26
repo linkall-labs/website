@@ -1,0 +1,29 @@
+{{- define "main" -}}
+<div class="post">
+    <div class="post-header" style="background-image: url('{{.Site.BaseURL}}images/{{.Params.postImage}}')">
+        <div class="container" data-aos="fade-up">
+            <div class="date">{{ .Lastmod.Format "January 2, 2006" }}</div>
+            <div class="title">
+                <h1>{{ .Title }}</h1>
+            </div>
+            <div class="tags">
+                <div class="tag">
+                    {{ range .Params.tags }}
+                        <span>{{ . }}</span>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-body">
+        <div class="container">
+            <div class="post-body-content">
+                {{ .Content }}
+            </div>
+        </div>
+        <div class="post-sidebar">
+            <div class="post-sidebar-anchors"></div>
+        </div>
+    </div>
+</div>
+{{ end }}

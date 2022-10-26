@@ -1,0 +1,201 @@
+{{ define "main" }}
+<section>
+    <div class="container">
+        <div class="home-intro">
+            <div class="home-intro-wrapper">
+                <div class="content" data-aos="fade-right">
+                    <img src="{{.Site.BaseURL}}images/logos/logo-vanus.svg" alt="logo-vanus">
+                    <h2>Serverless Event Platform for easily building Event-Driven Architecture (EDA) Applications.</h2>
+                    <p>Vanus provides enterprises and organizations an innovative Platform for Collecting, Storing, Distributing, and Processing Events at Scale.</p>
+                </div>
+                <div class="image" data-aos="fade-left" >
+                    {{ partial
+                    "ui/product-animation.html" }}
+                </div>
+            </div>	
+        </div>
+    </div>
+</section>
+<section>
+    <div class="icons-background orb">
+        <div class="container">
+            <div class="icons-background-wrapper">
+                <div class="icon" data-aos="fade-up" data-aos-delay="200">
+                    <img src="{{.Site.BaseURL}}images/icons/icon-serverless.svg" alt="icon-serverless">
+                    <p>Serverless</p>
+                </div>
+                <div class="icon" data-aos="fade-up" data-aos-delay="400">
+                    <img src="{{.Site.BaseURL}}images/icons/icon-open-source.svg" alt="icon-open-source">
+                    <p>Open Source</p>
+                </div>
+                <div class="icon" data-aos="fade-up" data-aos-delay="600">
+                    <img src="{{.Site.BaseURL}}images/icons/icon-event-platform.svg" alt="icon-event-platform">
+                    <p>Event Platform</p>
+                </div>
+            </div>		
+        </div>
+        <canvas class="orb-canvas"></canvas>
+        <div class="area">
+        <ul class="circles">
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+        </ul>
+        </div>        
+    </div>
+</section>
+<section>
+    <div class="icons-block">
+        <div class="container">
+            <div class="icon-block-header">                
+            {{
+            partial "ui/featured-title.html" 
+            (dict 
+                "title" "Connect the Future of Cloud Computing with Vanus"  
+                "subtitle" "The future of Cloud Computing is Serverless. Vanus is the leading Event Platform for the Serverless era."                          
+            )
+            }}
+            </div>
+            <div class="icons-block-wrapper">
+                <div class="icon-block" data-aos="fade-up" data-aos-delay="100">
+                    <div class="image">
+                        <img src="{{.Site.BaseURL}}images/icons/icon-standard.svg" alt="icon-standard">
+                    </div>                    
+                    <h3>Standards-Based</h3>
+                    <p>CloudEvents compliant events, embrace an open-source ecosystem.</p>
+                </div>
+                <div class="icon-block" data-aos="fade-up" data-aos-delay="200">
+                    <div class="image">
+                        <img src="{{.Site.BaseURL}}images/icons/icon-global.svg" alt="icon-global">
+                    </div>                    
+                    <h3>Global Routing</h3>
+                    <p>Build event platforms globally for hybrid and multi-cloud.</p>
+                </div>
+                <div class="icon-block" data-aos="fade-up" data-aos-delay="300">
+                    <div class="image">
+                        <img src="{{.Site.BaseURL}}images/icons/icon-elasticity.svg" alt="icon-global">
+                    </div>                    
+                    <h3>Elasticity</h3>
+                    <p>Build event platforms globally for hybrid and multi-cloud.</p>
+                </div>
+                <div class="icon-block" data-aos="fade-up" data-aos-delay="400">
+                    <div class="image">
+                        <img src="{{.Site.BaseURL}}images/icons/icon-plentiful.svg" alt="icon-plentiful">
+                    </div>                    
+                    <h3>Plentiful Event Sources</h3>
+                    <p>Preset rich event sources, integrate various databases, cloud services, and user workloads.</p>
+                </div>
+                <div class="icon-block" data-aos="fade-up" data-aos-delay="500">
+                    <div class="image">
+                        <img src="{{.Site.BaseURL}}images/icons/icon-workflow.svg" alt="icon-workflow">
+                    </div>                    
+                    <h3>Workflow</h3>
+                    <p>With built-in Serverless workflow, users can easily build EDA applications.</p>
+                </div>
+                <div class="icon-block" data-aos="fade-up" data-aos-delay="600">
+                    <div class="image">
+                        <img src="{{.Site.BaseURL}}images/icons/icon-observasity.svg" alt="icon-observasity">
+                    </div>                    
+                    <h3>Observasity</h3>
+                    <p>The entire link is observable and traceable. Support event search, replay, and retry configuration.</p>
+                </div>
+                
+            </div>	
+        </div>
+    </div>
+</section>
+<section>
+    <div class="back-card-block">        
+        {{ $url := printf "%scompany" .Site.BaseURL  }}
+        {{ partial
+            "ui/big-card.html" (
+                dict
+                "image" "images/company-card-img.jpg"
+                "title" "Our Company: connecting the future of Cloud Computing with Vanus"
+                "desc" "The future of Cloud Computing is Serverless. Vanus is the leading event platform for the Serverless era. Vanus provides enterprises and organizations an innovative platform for collecting, storing, distributing, and processing events at scale."
+                "linkText" ""
+                "linkHref" ""
+                "extraCssClass" "#"
+        )}}
+    </div>
+</section>
+<section>
+    <div class="grid-posts orb">        
+        <div class="container">
+            <div class="grid-posts-header">                
+                {{
+                partial "ui/featured-title.html" 
+                (dict 
+                    "title" "Discover our Latest Blogs"
+                    "titleClass" "blue-bright"
+                )
+                }}
+            </div>	
+            <div class="grid-posts-wrapper">
+                {{ range last 3 (where .Site.RegularPages "Type" "blog") }}
+                    {{ $image := printf "images/%s" .Params.postImage }}
+                    {{ $date := .Lastmod.Format "January 2, 2006" }}
+                    <div class="grid-post">
+                        <div class="grid-post-wrapper">
+                            {{ partial "ui/post-card.html"
+                                (dict
+                                    "image" $image
+                                    "title" .Title
+                                    "date" $date
+                                    "desc" .Description
+                                    "linkText" "Read more"
+                                    "linkHref" .Permalink
+                                )
+                            }}
+                        </div>
+                    </div>
+                {{ end }}
+            </div>	
+            <div class="grid-posts-bottom">
+                <a href="{{.Site.BaseURL}}blog" class="featured-button" data-aos="fade-up">
+                    <span>Go to the Blog</span>
+                </a>
+            </div>
+        </div>
+        <canvas class="orb-canvas"></canvas>
+        <div class="area">
+        <ul class="circles">
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+            <li><img src="{{.Site.BaseURL}}images/hex.svg" alt="hex-image"/></li>
+        </ul>
+        </div>    
+    </div>
+</section>
+<section>
+    <div class="hero-banner-link">
+        <div class="hero-banner-link-wrapper">            
+            {{
+            partial "ui/featured-title.html" 
+            (dict 
+                "title" "Join Vanus Community"                  
+                "subtitle" "Open, collaboration, transparency, let's grow together!"                                            
+            )
+            }}
+            <a href="https://join.slack.com/t/linkall-group/shared_invite/zt-1d4thdliv-f7j~5WoFovvwnsMHpGxkAw" class="featured-button" data-aos="fade-up">
+                <img src="{{.Site.BaseURL}}images/social/slack-color.svg" alt="slack-color">
+            </a>
+        </div>
+    </div>
+</section>
+
+{{ end }}

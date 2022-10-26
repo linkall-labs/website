@@ -1,0 +1,79 @@
+{{ define "main" }}
+
+<section class="docs-section">
+  <div class="container">
+    <div class="docs-page">
+      <div class="docs-page-wrapper">
+        <div class="docs-categories">
+          <ul>
+            {{ $actualPage := .Page }}
+            {{ range (where .Site.RegularPages "Type" $actualPage.Type).ByWeight }}
+              <li {{ if eq .Permalink $actualPage.Permalink }} class="active" {{ end }}>
+                <a href="{{ .Permalink }}"><span>{{ .Title }}</span></a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="docs-body">
+          <div class="docs-body-breadcrumbs">
+            <span class="home"><a href="{{.Site.BaseURL}}resources/introduction"><img src="{{.Site.BaseURL}}images/icons/icon-home.svg" alt="icon-home"></a></span>
+            <span class="current">{{ .Params.title }}</span>
+          </div>
+          <div class="anchor-mobile-selector">
+            <div class="mobile-selector-label">              
+              <span>On this page</span>
+              <img src="{{.Site.BaseURL}}images/icons/icon-angle-down.svg" alt="icon-angle-down">   
+            </div>
+            <div class="mobile-selector-options">
+              <div class="mobile-selector-options-wrapper"></div>  
+            </div>
+          </div>
+          <div class="docs-body-content" data-aos="fade-in">
+            <h1>{{ .Params.title }}</h1>            
+            {{ .Content }}      
+            {{ if .Params.note }}
+              {{ partial "ui/note.html"
+                  (dict                                        
+                      "note" .Params.note
+                  )
+              }}
+            {{end}}
+          </div>
+          <div class="docs-body-pagination">
+            {{ if .Page.Next }}
+            <div class="docs-body-pagination-item prev">
+              <a href="{{ .Page.Next.Permalink }}">
+                <strong>< Previous</strong>
+                <span>{{ .Page.Next.Title }}</span>
+              </a>
+            </div>
+            {{ end }}
+            {{ if and (.Page.Prev) (eq .Page.Prev.Type $actualPage.Type)}}
+            <div class="docs-body-pagination-item next">
+              <a href="{{ .Page.Prev.Permalink }}">
+                <strong>Next ></strong>
+                <span>{{ .Page.Prev.Title }}</span>
+              </a>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        <div class="docs-sidebar">
+          <div class="docs-sidebar-options">
+            <div class="docs-sidebar-option">
+              <strong>Edit this page</strong>
+              <a class="github-button" href="https://github.com/linkall-labs/docs/fork" data-icon="octicon-repo-forked" aria-label="Fork linkall-labs/docs on GitHub">Fork</a>
+            </div>
+            <div class="docs-sidebar-option">
+              <strong>Create an issue</strong>
+              <a class="github-button" href="https://github.com/linkall-labs/docs/issues" data-icon="octicon-issue-opened" aria-label="Issue linkall-labs/docs on GitHub">Issue</a>
+            </div>
+          </div>
+          <div class="docs-sidebar-anchors"></div>
+        </div>
+      </div>	
+    </div>
+  </div>
+</section>
+
+{{ end }}

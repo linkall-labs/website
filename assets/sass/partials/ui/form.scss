@@ -1,0 +1,26 @@
+.form{
+	label{
+		text-align: left;
+		display: block;								
+		margin-top: 15px;    	
+	}
+	input{
+		padding: 15px;
+		width: 100%;
+		border: 0;
+		border-bottom:1px solid $gray-border;
+		margin-top: 10px;
+		&[type="submit"]{						
+			border: 0;
+			background: transparent;
+		}
+	}
+	textarea{
+		width: 100%;
+		border: 0;
+		border-bottom:1px solid $gray-border;
+		margin-top: 15px;
+		padding: 15px;
+	}
+	
+}

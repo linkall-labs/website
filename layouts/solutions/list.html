@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+<section>
+  <div class="solutions">
+    <div class="solutions-header">
+      {{
+        partial "ui/featured-title.html" 
+        (dict 
+            "title" "Vanus Solutions"  
+            "subtitle" "The future of Cloud Computing is Serverless. Vanus is the leading Event Platform for the Serverless era."                          
+        )
+        }}
+    </div>
+    <div class="solutions-wrapper">
+      <div class="solutions-cards">
+        <div class="solutions-cards-wrapper" data-aos="fade-down">
+          {{ $url := printf "%ssolutions/iot" .Site.BaseURL  }}
+          {{ partial "ui/single-title-card.html"
+              (dict
+                  "icon" "../images/icons/icon-iot.svg" 
+                  "title" "IoT"
+                  "linkText" "See more"
+                  "linkHref" $url
+              )
+          }}
+          {{ $url := printf "%ssolutions/data-integration" .Site.BaseURL  }}
+          {{ partial "ui/single-title-card.html"
+              (dict
+                  "icon" "../images/icons/icon-db.svg" 
+                  "title" "Data Integration"
+                  "linkText" "See more"
+                  "linkHref" $url
+              )
+          }}  
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

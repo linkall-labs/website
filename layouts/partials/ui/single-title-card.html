@@ -1,0 +1,11 @@
+<div class="single-title-card">
+  <div class="title">
+    <h3>{{.title}}</h3>
+  </div>
+  <div class="icon">
+    <img src="{{.Site.BaseURL}}{{.icon}}" alt="{{ replace .title " " "-" }}">
+  </div>
+  <div class="link">
+    <a href="{{.linkHref}}" class="primary-button"><span>{{.linkText}}</span></a>
+  </div>
+</div>

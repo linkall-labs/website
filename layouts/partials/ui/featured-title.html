@@ -1,0 +1,12 @@
+<div class="featured-title" data-aos="fade-up">
+  {{ if .title }}
+  <div class="title{{ if .titleClass }} {{.titleClass}}{{end}}">
+    <h2>{{.title}}</h2>
+  </div>
+  {{ end }}
+  {{ if .subtitle }}
+  <div class="subtitle{{ if .subtitleClass }} {{.subtitleClass}}{{end}}">
+    <p>{{.subtitle | safeHTML}}</p>
+  </div>
+  {{ end }}
+</div>

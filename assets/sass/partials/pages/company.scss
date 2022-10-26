@@ -1,0 +1,12 @@
+.company-wrapper{
+  @include breakpoint(md) {    
+    padding: 0 15px;
+  }
+}
+.company-header { 
+  margin: 120px 0;
+  @include breakpoint(md) {    
+    padding: 0 15px;
+    margin: 80px 0;
+  }
+}

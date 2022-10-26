@@ -1,0 +1,34 @@
+{{ define "main" }}
+
+<section>
+  <div class="container">
+    <div class="company">
+      <div class="company-header">      
+        {{
+          partial "ui/featured-title.html" 
+          (dict 
+              "title" "Explore the Best Practice in Serverless"
+              "subtitle" "Vanus is building Event-Oriented Middleware for the Serverless era. Let’s take an adventure on Serverless journey together."
+          )
+        }}
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+    <div class="back-card-block" id="careers">
+        {{ partial
+        "ui/big-card.html" (
+        dict
+        "image" "../images/careers-card-img.jpg"
+        "title" "Careers - Work at Linkall"
+        "desc" "We are a global team with extensive experience in Cloud <br/>Computing, Kubernetes, Knative, DevOps, etc."
+        "linkText" "Work with us!"
+        "linkHref" "https://www.linkedin.com/hiring/jobs/3218806424/detail/"
+        "blank" true
+        "extraCssClass" "#"
+        )}}
+    </div>
+</section>
+
+{{ end }}

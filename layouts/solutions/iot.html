@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+<section>
+  <div class="solutions">
+    <div class="solutions-header solutions-header-single">
+      {{
+        partial "ui/featured-title.html" 
+        (dict 
+            "title" "Vanus Solutions"            
+            "subtitle" "The future of Cloud Computing is Serverless. Vanus is the leading Event <br> Platform for the Serverless era."                                       
+        )
+        }}
+    </div>
+    <div class="card-block">
+      {{ partial
+      "ui/big-card.html" (
+      dict
+      "image" "../../images/test-card-img.jpg"
+      "title" "Challenged by IoT? Vanus has the Solution for you. Clever. Precise."
+      "desc" "The IoT networks connect massive devices and process enormous data in real time. Data transmission stability and security are vital in IoT scenarios.<br/><br/>Vanus is fully compatible with the MQTT protocol and supports various IoT communication protocols (CoAP/LwM2M). It adopts a high-availability distributed storage model, which ensures data transmission stability and security."
+      )}}
+    </div>
+  </div>
+</section>
+
+{{ end }}

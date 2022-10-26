@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+<section>
+  <div class="container">
+    <div class="company">
+      <div class="company-header">      
+        {{
+          partial "ui/featured-title.html" 
+          (dict 
+              "title" "Community Events"
+          )
+        }}
+      </div>   
+      <div class="company-wrapper">
+          {{ range last 1 (where .Site.RegularPages "Type" "event") }}
+              {{ $image := printf "../images/%s" .Params.postImage }}
+              {{ .Scratch.Set "last" .Permalink }}
+              {{
+              partial "ui/big-card.html" (
+                dict
+                "image" $image
+                "title" .Title
+                "desc" .Description
+                "linkText" "Read more"
+                "linkHref" .Permalink )
+              }}
+          {{ end }}
+      </div> 
+      <div class="company-posts">
+        <div class="grid-posts">          
+          <div class="grid-posts-wrapper">
+              {{ range last 1000 (where .Site.RegularPages "Type" "event") }}
+                {{ if ne .Permalink (.Scratch.Get "last") }}
+                  <div class="grid-post">
+                      <div class="grid-post-wrapper">
+                          {{ $image := printf "../images/%s" .Params.postImage }}
+                              {{ partial "ui/post-card.html"
+                                (dict
+                                  "image" $image
+                                  "title" .Title
+                                  "desc" .Description
+                                  "linkText" "Read more"
+                                  "linkHref" .Permalink
+                              )
+                          }}
+                      </div>
+                  </div>
+                {{ end}}
+              {{ end }}
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

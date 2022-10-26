@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS on Linkall</title>
+    <link>https://oscardelrio.es/web/test/K09kFl5A49vB/tags/aws/</link>
+    <description>Recent content in AWS on Linkall</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://oscardelrio.es/web/test/K09kFl5A49vB/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Past, Present and Future of Message Queue</title>
+      <link>https://oscardelrio.es/web/test/K09kFl5A49vB/blog/past-present-and-future/</link>
+      <pubDate>Mon, 29 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://oscardelrio.es/web/test/K09kFl5A49vB/blog/past-present-and-future/</guid>
+      <description>The Past, Present and Future of Message Queue 摘要： 本文以互联网的发展为主线，用叙事的方式向读者再现了消息系统从诞生至今的发展历史。从1983年开始，消息系统经历了不同历史时期的历练与打磨，它们的使用方式、功能特性、产品形态、应用场景都发生了非常大的变化。作者选取了五款不同时代的代表性作品，描述了这些产品诞生的历史背景，立足解决的核心问题，并尝试分析它们取得成功的关键因素。最后作者给出了在Serverless时代的三个断言，并指出了当前消息系统在解决Serverless场景存在的核心痛点，展望了未来消息产品应该具备的关键能力。
+一 Past part：开源史前的消息队列 故事要从一位印度小哥说起。1983年26岁的孟买工程师Vivek Ranadive [1]从MIT毕业后决定创办自己的信息技术公司。当时与硬件相比，软件开发效率非常低。受计算机总线的启发，Vivek设计了一款软件计算机总线，名为The Information Bus（TIB），从此消息队列踏入了软件历史，开启了一个全球每年数十亿美金的新市场。
+1985年，Vivek从 Teknekron Corp 获得种子资金，Teknekron Software Systems Inc. (TSS) 诞生了，专注于TIB商业化。TIB主要服务于金融行业，解决证券交易软件之间的数据交换问题。20世纪80年代美国金融交易行业门厅若市，因此TIB被广泛使用大获成功。Teknekron于1993年被路透集团收购[3]，1997年路透成立TIBCO Softwore[4]独立运营TIB软件解决方案。2013年TIBCO Software通过 Vista Equity Partners 的 42 亿美元的收购，被正式私有化[5]。
+TIB的成功受到蓝色巨人IBM的关注，因为IBM的客户也主要来自于金融行业。1990年IBM开始研发消息队列，三年后IBM WebSphere MQ产品面世[6,7]。经过不断发展，IBM MQ成为全球极具竞争力的商业消息系统[8,9]。根据Gartner报告[10]2020年IBM MQ每年全球仍有近10亿美金的营收,占全球消息中间件市场份额近三分之一。
+二 Past part：开源时代 商业化MQ的成功，使其占据了大型企业的应用通信市场，然而高昂的价格却令中小企业望而却步。同时，商业化MQ提供商为了维持其竞争壁垒，建立了封闭的产品生态，不与其他MQ互通。导致很多大企业同时用了多个MQ供应商的产品，彼此却无法打通。例如，应用已经订阅了TIBCO MQ消息，若需要消费来自IBM MQ的消息，则实现起来会非常困难。这些产品使用不同的API、不同的协议，因而毫无疑问无法联合起来组成单一的总线。为了解决这个问题，Java Message Service（JMS）在1998年诞生了[11,12]。
+JMS之于MQ类似于JDBC之于数据库，它试图通过提供公共Java API的方式，隐藏单独MQ产品供应商提供的实际接口，从而跨越壁垒解决互通问题。从技术上讲，Java应用程序只需针对JMS API编程，选择合适的MQ驱动即可，JMS会打理好其他部分。JMS确实一定程度上解决了MQ之间互通的问题，但当应用通讯底层适配不同的MQ时需要代码去胶合众多不同MQ接口，这使JMS应用程序非常脆弱，可用性下降。很明显，市场急需一个原生支持JMS协议的MQ出现。
+基于这样的背景，2003年ActiveMQ 诞生[13]，它是第一个原生支持JMS协议的开源消息队列产品。ActiveMQ完整实现了JMS。ActiveMQ的出现解决了适配JMS稳定性的问题，受到很多企业的支持。而且ActiveMQ是开源产品，鉴于商业版MQ高昂的价格，ActiveMQ深受中小企业的追捧。2005年Damarillo等人围绕ActiveMQ项目成立了LogicBlaze公司[14]，该公司2年后被IONA收购[15]。
+JMS有一个比较严重的不足，只针对于Java应用。其他语言开发的程序无法使用JMS完成信息的交换，在此背景下，真正的救世主AMQP出现了。AMQP[16]（Advanced Message Queuing Protocol）在2003年时被John O&amp;rsquo;Hara提出，由摩根大通牵头联合Cisco, IONA,Red Hat, iMatix等成立了AMQP工作组，用于解决金融领不同平台之间的消息传递交互问题。AMQP是一种协议，更准确的说是一种Binary Wire-Level Protocol（链接协议）。这是其与JMS的本质差别，AMQP不从API层进行限定，而是直接定义网络交换的数据格式。这使得实现了AMQP的Provider天然性就是跨平台的。意味着我们可以使用Java的AMQP Provider，同时使用一个Python的Producer加一个Ruby的Consumer。从这一点看，AMQP可以用HTTP来进行类比，不关心实现的语言，只要大家都按照相应的数据格式去发送报文请求，不同语言的Client均可以和不同语言的Server链接。AMQP的Scope要比JMS更广阔。
+显然市场上需要一个完全实现AMQP协议的消息队列产品。2007年由Alexis和Matthias联合创办的公司Rabbit Technologies成立[17]，同年该公司推出了第一个完全实现AMQP协议的消息队列产品RabbitMQ，该公司2010年被VMware收购[18]。RabbitMQ用Erlang语言开发，性能非常好，微秒级延时。因为对AMQP的完全支持，较之IBM MQ等商业产品以及实现JMS的ActiveMQ，其更加开放，可以支持更多的应用接入集成。而且较之同时代的AMQP其他实现产品比如Apache Qpid[19]，其多语言客户端、技术文档更加规范、健全，开源社区更加活跃[20][21]。这使得RabbitMQ逐渐成为中小企业甚至大企业进行消息交换的理想选择。实际上在全球范围内，RabbitMQ至今仍然是最成功的开源消息队列之一。
+当然RabbitMQ并非完美无缺，恰恰由于其对AMQP协议的完美支持，实现过于复杂。这也导致它的吞吐量并不高。
+三 Present part：大数据时代 互联网的诞生让企业产生的数据越来越多，2010年移动互联网的到来，使互联网这个超级入口被彻底引爆。2010年全球有19亿7千万网民，占全球人口的28.</description>
+    </item>
+    
+    <item>
+      <title>Title 1</title>
+      <link>https://oscardelrio.es/web/test/K09kFl5A49vB/event/event-1/</link>
+      <pubDate>Mon, 29 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://oscardelrio.es/web/test/K09kFl5A49vB/event/event-1/</guid>
+      <description>Title 1 This is the description 1
+Anchor </description>
+    </item>
+    
+    <item>
+      <title>Title 2</title>
+      <link>https://oscardelrio.es/web/test/K09kFl5A49vB/event/event-2/</link>
+      <pubDate>Mon, 29 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://oscardelrio.es/web/test/K09kFl5A49vB/event/event-2/</guid>
+      <description>Title 2 This is the description 2
+Anchor </description>
+    </item>
+    
+    <item>
+      <title>The Past, Present and Future of Message Queue 2</title>
+      <link>https://oscardelrio.es/web/test/K09kFl5A49vB/blog/past-present-and-future-2/</link>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://oscardelrio.es/web/test/K09kFl5A49vB/blog/past-present-and-future-2/</guid>
+      <description>The Past, Present and Future of Message Queue 摘要： 本文以互联网的发展为主线，用叙事的方式向读者再现了消息系统从诞生至今的发展历史。从1983年开始，消息系统经历了不同历史时期的历练与打磨，它们的使用方式、功能特性、产品形态、应用场景都发生了非常大的变化。作者选取了五款不同时代的代表性作品，描述了这些产品诞生的历史背景，立足解决的核心问题，并尝试分析它们取得成功的关键因素。最后作者给出了在Serverless时代的三个断言，并指出了当前消息系统在解决Serverless场景存在的核心痛点，展望了未来消息产品应该具备的关键能力。
+一 Past part：开源史前的消息队列 故事要从一位印度小哥说起。1983年26岁的孟买工程师Vivek Ranadive [1]从MIT毕业后决定创办自己的信息技术公司。当时与硬件相比，软件开发效率非常低。受计算机总线的启发，Vivek设计了一款软件计算机总线，名为The Information Bus（TIB），从此消息队列踏入了软件历史，开启了一个全球每年数十亿美金的新市场。
+1985年，Vivek从 Teknekron Corp 获得种子资金，Teknekron Software Systems Inc. (TSS) 诞生了，专注于TIB商业化。TIB主要服务于金融行业，解决证券交易软件之间的数据交换问题。20世纪80年代美国金融交易行业门厅若市，因此TIB被广泛使用大获成功。Teknekron于1993年被路透集团收购[3]，1997年路透成立TIBCO Softwore[4]独立运营TIB软件解决方案。2013年TIBCO Software通过 Vista Equity Partners 的 42 亿美元的收购，被正式私有化[5]。
+TIB的成功受到蓝色巨人IBM的关注，因为IBM的客户也主要来自于金融行业。1990年IBM开始研发消息队列，三年后IBM WebSphere MQ产品面世[6,7]。经过不断发展，IBM MQ成为全球极具竞争力的商业消息系统[8,9]。根据Gartner报告[10]2020年IBM MQ每年全球仍有近10亿美金的营收,占全球消息中间件市场份额近三分之一。
+二 Past part：开源时代 商业化MQ的成功，使其占据了大型企业的应用通信市场，然而高昂的价格却令中小企业望而却步。同时，商业化MQ提供商为了维持其竞争壁垒，建立了封闭的产品生态，不与其他MQ互通。导致很多大企业同时用了多个MQ供应商的产品，彼此却无法打通。例如，应用已经订阅了TIBCO MQ消息，若需要消费来自IBM MQ的消息，则实现起来会非常困难。这些产品使用不同的API、不同的协议，因而毫无疑问无法联合起来组成单一的总线。为了解决这个问题，Java Message Service（JMS）在1998年诞生了[11,12]。
+JMS之于MQ类似于JDBC之于数据库，它试图通过提供公共Java API的方式，隐藏单独MQ产品供应商提供的实际接口，从而跨越壁垒解决互通问题。从技术上讲，Java应用程序只需针对JMS API编程，选择合适的MQ驱动即可，JMS会打理好其他部分。JMS确实一定程度上解决了MQ之间互通的问题，但当应用通讯底层适配不同的MQ时需要代码去胶合众多不同MQ接口，这使JMS应用程序非常脆弱，可用性下降。很明显，市场急需一个原生支持JMS协议的MQ出现。
+基于这样的背景，2003年ActiveMQ 诞生[13]，它是第一个原生支持JMS协议的开源消息队列产品。ActiveMQ完整实现了JMS。ActiveMQ的出现解决了适配JMS稳定性的问题，受到很多企业的支持。而且ActiveMQ是开源产品，鉴于商业版MQ高昂的价格，ActiveMQ深受中小企业的追捧。2005年Damarillo等人围绕ActiveMQ项目成立了LogicBlaze公司[14]，该公司2年后被IONA收购[15]。
+JMS有一个比较严重的不足，只针对于Java应用。其他语言开发的程序无法使用JMS完成信息的交换，在此背景下，真正的救世主AMQP出现了。AMQP[16]（Advanced Message Queuing Protocol）在2003年时被John O&amp;rsquo;Hara提出，由摩根大通牵头联合Cisco, IONA,Red Hat, iMatix等成立了AMQP工作组，用于解决金融领不同平台之间的消息传递交互问题。AMQP是一种协议，更准确的说是一种Binary Wire-Level Protocol（链接协议）。这是其与JMS的本质差别，AMQP不从API层进行限定，而是直接定义网络交换的数据格式。这使得实现了AMQP的Provider天然性就是跨平台的。意味着我们可以使用Java的AMQP Provider，同时使用一个Python的Producer加一个Ruby的Consumer。从这一点看，AMQP可以用HTTP来进行类比，不关心实现的语言，只要大家都按照相应的数据格式去发送报文请求，不同语言的Client均可以和不同语言的Server链接。AMQP的Scope要比JMS更广阔。
+显然市场上需要一个完全实现AMQP协议的消息队列产品。2007年由Alexis和Matthias联合创办的公司Rabbit Technologies成立[17]，同年该公司推出了第一个完全实现AMQP协议的消息队列产品RabbitMQ，该公司2010年被VMware收购[18]。RabbitMQ用Erlang语言开发，性能非常好，微秒级延时。因为对AMQP的完全支持，较之IBM MQ等商业产品以及实现JMS的ActiveMQ，其更加开放，可以支持更多的应用接入集成。而且较之同时代的AMQP其他实现产品比如Apache Qpid[19]，其多语言客户端、技术文档更加规范、健全，开源社区更加活跃[20][21]。这使得RabbitMQ逐渐成为中小企业甚至大企业进行消息交换的理想选择。实际上在全球范围内，RabbitMQ至今仍然是最成功的开源消息队列之一。
+当然RabbitMQ并非完美无缺，恰恰由于其对AMQP协议的完美支持，实现过于复杂。这也导致它的吞吐量并不高。
+三 Present part：大数据时代 互联网的诞生让企业产生的数据越来越多，2010年移动互联网的到来，使互联网这个超级入口被彻底引爆。2010年全球有19亿7千万网民，占全球人口的28.</description>
+    </item>
+    
+  </channel>
+</rss>

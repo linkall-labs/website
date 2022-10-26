@@ -1,0 +1,116 @@
+.grid-posts { 
+  padding: 90px 0;
+  @include breakpoint(md) {
+    padding: 60px 15px;
+  }
+  &.back{
+    background: $blue;
+    background-size: cover;
+    background-position: center;
+  }
+	.grid-posts-header { 
+    margin-bottom: 90px;		
+	}
+
+	.grid-posts-wrapper { 
+    display: flex;
+    flex-wrap: wrap;    
+    margin: 0 -20px;
+    &.w_25{
+      margin: 0 -10px;
+      .grid-post{
+        width: 25%;
+        padding: 0 10px;
+        text-align: center;
+        @include breakpoint(md) {
+          width: 50%;
+        }
+        @include breakpoint(xs) {
+          width: 100%;
+        }
+      }
+    }
+    .grid-post { 
+      width: 33.333%;
+      padding: 0 20px;
+      margin-bottom: 40px;
+      @include breakpoint(md) {
+        width: 50%;
+      }
+      @include breakpoint(xs) {
+        width: 100%;
+      }
+      .grid-post-wrapper{
+        height: 100%;
+      }
+      
+    }
+	}
+
+	.grid-posts-bottom { 
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+		.featured-button { 
+      display: inline-flex;
+		} 
+	}
+}
+
+.post-card { 
+  border-radius: 30px;
+  background: white;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .image { 
+    width: 100%;    
+    img { 
+      width: 100%;
+    } 
+  }
+  .icon{
+    text-align: center;
+    padding: 50px 0;
+    height: 175px;
+  }
+  .content {     
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 30px;
+    &.content-icon{
+      p{
+        margin-bottom: 70px;
+      }
+    }
+    .date{
+      display: block;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+    h3 { 
+      color: $blue;
+      margin: 0;
+      font-size: 24px;
+      margin-bottom: 30px;      
+    }
+
+    p { 
+      font-size: 14px;
+      margin: 0;
+      margin-bottom: 30px;
+      flex: 1;
+    }
+
+    .link {       
+      .primary-button { 
+
+      }
+    }
+  }
+}

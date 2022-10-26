@@ -1,0 +1,55 @@
+:root {
+  --dark-color: hsl(var(--hue), 100%, 9%);
+  --light-color: hsl(var(--hue), 95%, 98%);
+  --base: hsl(var(--hue), 95%, 50%);
+  --complimentary1: hsl(var(--hue-complimentary1), 95%, 50%);
+  --complimentary2: hsl(var(--hue-complimentary2), 95%, 50%);
+
+  --font-family: "Poppins", system-ui;
+
+  --bg-gradient: linear-gradient(
+    to bottom,
+    hsl(225, 71%, 25%),
+    hsl(225, 71%, 25%)
+  );
+}
+
+.icons-background { 
+  position: relative;
+  background: $blue;
+  padding: 90px 0;
+  background-size: cover;
+  background-position: center;    
+	.icons-background-wrapper { 
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    @include breakpoint(xs) {
+      flex-wrap: wrap;
+      
+    }
+		.icon { 
+      width: 33.333%;
+      text-align: center;
+      
+      @include breakpoint(xs) {
+        &:not(:last-child){
+          margin-bottom: 60px;
+        }
+      }
+      @include breakpoint(xs) {
+        width: 100%;
+      }
+			img { 
+        margin-bottom: 50px;
+			}
+
+			p { 
+        margin: 0;
+        color: white;
+        font-size: 20px;
+        line-height: 1.3em;
+			}
+		}
+	}
+}

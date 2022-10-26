@@ -1,0 +1,87 @@
+@import "partials/tools/_mixins";
+@import "partials/tools/_variables";
+@import "partials/tools/_fonts";
+@import "partials/tools/_breakpoints";
+
+@import "partials/lib/owl/owl.carousel.scss";
+@import "partials/lib/owl/owl.theme.default.scss";
+@import "partials/lib/animate/animate.scss";
+@import "partials/lib/aos/aos.scss";
+@import "partials/lib/bootstrap-grid";
+@import "partials/lib/normalize";
+
+@import "partials/ui/buttons";
+@import "partials/ui/form";
+
+@import "partials/layout/header";
+@import "partials/layout/footer";
+
+@import "partials/components/anchor-mobile-selector";
+@import "partials/components/big-card";
+@import "partials/components/fancy";
+@import "partials/components/featured-title";
+@import "partials/components/grid-posts";
+@import "partials/components/hashtags-grid";
+@import "partials/components/hero-banner-link";
+@import "partials/components/home-intro";
+@import "partials/components/icons-background";
+@import "partials/components/icons-block";
+@import "partials/components/note-alert";
+@import "partials/components/single-title-card";
+@import "partials/components/orb";
+
+
+@import "partials/pages/community";
+@import "partials/pages/company";
+@import "partials/pages/docs";
+@import "partials/pages/post";
+@import "partials/pages/solutions";
+
+
+
+
+body{
+	font-family: $primary;
+	font-weight: normal;	
+	font-size: 16px;	
+	color: $primary-color;
+	overflow-x: hidden;
+}
+main{	
+}
+
+h1,h2,h3,h4, h5,h6 {
+	font-family: $Exo;
+	
+}
+
+p, small, span, li{	
+	
+}
+a{
+	&:hover{
+		
+	}
+}
+
+.card-block{
+	padding: 130px;
+	@include breakpoint(md) {
+		padding: 45px 30px;
+	}
+	&.white{
+		background: white;
+	}
+}
+.back-card-block{
+	padding: 130px;
+	background: #F5F5F5;
+	background-size: cover;
+	background-position: center;
+	@include breakpoint(md) {
+		padding: 45px 30px;
+	}
+	&.white{
+		background: white;
+	}
+}

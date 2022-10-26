@@ -1,0 +1,182 @@
+{{ define "main" }}
+<section>
+  <div class="community">
+    <div class="community-wrapper">
+      <div class="hashtags-grid" style="background-image: url('{{.Site.BaseURL}}images/back-3.jpg')">
+        <div class="container">
+          <div class="hashtags-grid-header">            
+            {{
+              partial "ui/featured-title.html" 
+              (dict 
+                "title" "Join Vanus Community"
+                "titleClass" "blue-bright" 
+                "subtitle" "Open, Collaboration, Transparency, let's grow together!" 
+                "subtitleClass" "white"
+              )
+            }}
+          </div>
+          <div class="hashtags-grid-wrapper">
+            <div class="hashtag-item" data-aos="fade-in" data-aos-delay="200">
+              <div class="hashtag-item-wrapper">
+                <a target="_blank" href="#">
+                  <h4>#advice-community-development</h4>
+                  <p>Discuss tips and best practices on orchestration.</p>
+                </a>
+              </div>
+            </div>
+            <div class="hashtag-item" data-aos="fade-in" data-aos-delay="400">
+              <div class="hashtag-item-wrapper">
+                <a target="_blank" href="#">
+                  <h4>#advice-community-development</h4>
+                  <p>Discuss tips and best practices on orchestration.</p>
+                </a>
+              </div>
+            </div>
+            <div class="hashtag-item" data-aos="fade-in" data-aos-delay="600">
+              <div class="hashtag-item-wrapper">
+                <a target="_blank" href="#">
+                  <h4>#advice-community-development</h4>
+                  <p>Discuss tips and best practices on orchestration.</p>
+                </a>
+              </div>
+            </div>
+            <div class="hashtag-item" data-aos="fade-in" data-aos-delay="800">
+              <div class="hashtag-item-wrapper">
+                <a target="_blank" href="#">
+                  <h4>#advice-community-development</h4>
+                  <p>Discuss tips and best practices on orchestration.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="hashtags-grid-bottom">
+            <a target="blank" href="https://join.slack.com/t/linkall-group/shared_invite/zt-1d4thdliv-f7j~5WoFovvwnsMHpGxkAw" class="featured-button" data-aos="fade-up" data-aos-delay="1200">
+              <img src="{{.Site.BaseURL}}images/social/slack-color.svg" alt="slack-color">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="grid-posts">
+      <div class="grid-posts-header">        
+        {{
+          partial "ui/featured-title.html" 
+          (dict 
+            "title" "How to Contribute to Vanus"              
+            "subtitle" "Participate in Vanus Community, Core platform, Connectors, <br> Doc, and all Content Hub."             
+          )
+        }}
+      </div>
+      <div class="grid-posts-wrapper w_25">
+        <div class="grid-post">
+          <div class="grid-post-wrapper">
+            {{ partial "ui/post-card.html"
+                (dict
+                    "icon" "../images/icons/icon-global.svg" 
+                    "desc" "Contribute to Vanus connectors:"
+                    "linkText" "Read more"
+                    "linkHref" "#"
+                )
+            }}            
+          </div>
+        </div>
+        <div class="grid-post">
+          <div class="grid-post-wrapper">
+            {{ partial "ui/post-card.html"
+                (dict
+                    "icon" "../images/icons/icon-book.svg" 
+                    "desc" "Improve Vanus docs."
+                    "linkText" "Read more"
+                    "linkHref" "#"
+                )
+            }}            
+          </div>
+        </div>
+        <div class="grid-post">
+          <div class="grid-post-wrapper">
+            {{ partial "ui/post-card.html"
+                (dict
+                    "icon" "../images/icons/icon-pen.svg" 
+                    "desc" "Grow with us in the Vanus community."
+                    "linkText" "Read more"
+                    "linkHref" "#"
+                )
+            }}            
+          </div>
+        </div>
+        <div class="grid-post">
+          <div class="grid-post-wrapper">
+            {{ partial "ui/post-card.html"
+                (dict
+                    "icon" "../images/icons/icon-dollar.svg" 
+                    "desc" "Get paid to help us make Vanus stronger."
+                    "linkText" "Read more"
+                    "linkHref" "#"
+                )
+            }}            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="grid-posts back" style="background-image: url('{{.Site.BaseURL}}images/back-3.jpg')">
+    <div class="container">
+      <div class="grid-posts-header">        
+        {{
+          partial "ui/featured-title.html" 
+          (dict 
+            "title" "Community Events"  
+            "titleClass" "blue-bright"                          
+          )
+        }}
+      </div>
+      <div class="grid-posts-wrapper">
+        {{ range last 3 (where .Site.RegularPages "Type" "event") }}
+        {{ $image := printf "../images/%s" .Params.postImage }}
+        {{ $date := .Lastmod.Format "January 2, 2006" }}
+        <div class="grid-post">
+          <div class="grid-post-wrapper">
+            {{ partial "ui/post-card.html"
+            (dict
+            "image" $image
+            "title" .Title
+            "date" $date
+            "desc" .Description
+            "linkText" "Read more"
+            "linkHref" .Permalink
+            )
+            }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      <div class="grid-posts-bottom">
+        <a href="{{.Site.BaseURL}}event" class="featured-button" data-aos="fade-up">
+          <span>See all our events</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="back-card-block white">        
+      {{partial 
+      "ui/big-card.html" (
+          dict
+          "image" "../images/about-community.jpg" 
+          "title" "About Community"
+          "desc" "This is an inclusive place where engineers can find or lend support and discover new ways to contribute to the community.<br><br>Share ideas and knowledge with 6,000+ other passionate data engineering practitioners."
+          "linkText" "Code of conduct"
+          "linkHref" "https://github.com/linkall-labs/docs/blob/main/code-of-conduct.md"
+          "blank" true
+      )}}
+      
+  </div>
+</section>
+{{ end }}

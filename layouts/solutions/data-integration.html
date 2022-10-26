@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+<section>
+  <div class="solutions">
+    <div class="solutions-header solutions-header-single">
+      {{
+        partial "ui/featured-title.html" 
+        (dict 
+            "title" "Vanus Solutions"            
+            "subtitle" "The future of Cloud Computing is Serverless. Vanus is the leading Event <br> Platform for the Serverless era."                                       
+        )
+        }}
+    </div>
+    <div class="card-block">
+      {{ partial
+      "ui/big-card-reversed.html" (
+      dict
+      "image" "../../images/data-integration-card-img.jpg"
+      "title" "Data Integration"
+      "desc" "Modern complex applications have a variety of data transfer sources and destinations. It is expensive to use resources continuously. Besides, there is a lack of monitoring mechanisms during the synchronization process.<br/><br/>Vanus enables enterprises to simplify data integration complexity. Presetting plentiful sources/sinks and providing rich open source development templates, Vanus allows users to tackle business with low code."
+      )}}
+    </div>
+  </div>
+</section>
+
+{{ end }}

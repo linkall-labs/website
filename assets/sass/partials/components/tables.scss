@@ -1,0 +1,112 @@
+#tables{
+	@include breakpoint(md) {
+		width: 100%;
+		overflow: auto;
+	}
+	.table{
+		margin-top: 60px;
+		&:last-child{
+			margin-bottom: 60px;
+		}
+		table{
+			width: 100%;
+			tr{
+				&.tr-head{
+					td{
+						font-family: $primary-black;
+						padding: 15px 5px;
+					}
+				}
+				&.table-row{
+					&:nth-child(odd){
+						td{
+							background: #e8e9ed;
+							border-top: 1px solid #ccc;
+							border-bottom: 1px solid #ccc;
+						}
+					}
+					&:nth-child(even){
+						td{
+							
+						}
+					}
+					&:last-child{
+						&:nth-child(odd){
+							td{													
+								border-bottom: 0px solid #ccc;
+							}
+						}
+					}
+				}
+			}
+			td{
+				text-align: center;
+				padding: 15px;
+				font-size: 16px;
+			}
+		}
+	}
+}
+#tables-resumen{
+	h3{
+		font-family: $primary;
+		text-transform: uppercase;
+		
+	}
+	@include breakpoint(md) {
+		width: 100%;
+		overflow: auto;
+	}
+	.table{
+		margin-top: 0px;
+		margin: 0 -15px 0 -15px;
+		&:last-child{
+			margin-bottom: 60px;
+		}
+		table{
+			width: 100%;
+			tr{
+				&.tr-head{
+					td{
+						font-family: $primary-black;
+
+						padding: 15px;
+						font-size: 20px;
+						text-decoration: none;	
+						img{
+							width: 15px;
+							margin-right: 5px;
+							position: relative;
+							top: -2px;
+						}					
+					}
+				}
+				&.table-row{
+					&:nth-child(odd){
+						td{							
+							border-top: 1px solid #ccc;
+							border-bottom: 1px solid #ccc;
+						}
+					}
+					&:nth-child(even){
+						td{
+							
+						}
+					}
+					&:last-child{
+						&:nth-child(odd){
+							td{													
+								border-bottom: 0px solid #ccc;
+							}
+						}
+					}
+				}
+			}
+			td{
+				padding: 15px;
+				font-size: 16px;
+				//background: #fafafa;
+			}
+		}
+	}
+}
