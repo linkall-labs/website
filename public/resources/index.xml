@@ -1,43 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Resources on Linkall</title>
-    <link>https://oscardelrio.es/web/test/K09kFl5A49vB/resources/</link>
-    <description>Recent content in Resources on Linkall</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 07 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://oscardelrio.es/web/test/K09kFl5A49vB/resources/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Introduction</title>
-      <link>https://oscardelrio.es/web/test/K09kFl5A49vB/resources/introduction/</link>
-      <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://oscardelrio.es/web/test/K09kFl5A49vB/resources/introduction/</guid>
-      <description>What is Vanus? Vanus is a serverless event streaming system with event capture, storage, filter, and routing that can help you trigger and orchestrate serverless workloads and Kubernetes applications. Vanus provides hundreds of cloud services and application software connectors, enabling developers to route events from almost any data source to serverless workloads, helping enterprises to quickly build Event-Driven Architecture (EDA) applications, which is the core foundation of future digital enterprise facilities.</description>
-    </item>
-    
-    <item>
-      <title>Quick Start</title>
-      <link>https://oscardelrio.es/web/test/K09kFl5A49vB/resources/quickstart/</link>
-      <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://oscardelrio.es/web/test/K09kFl5A49vB/resources/quickstart/</guid>
-      <description>This guide will help you get started with Vanus. We will cover:
-Install and run Vanus core.
-Install and run Vance.
-Vanus core 1. Pre-requisites Install a Kubenetes cluster
-2. Install with YAML file {curl -O http://44.242.140.28:9080/all-in-one/latest.ymlkubectl apply -f latest.yml} 3. Verify the installation The all-in-one YAML file will create all required resources and run the Vanus core in the vanus namespace.
-{~ kubectl get po -n vanusvanus-controller-0 1/1 Running 0 30svanus-controller-1 1/1 Running 0 30svanus-controller-2 1/1 Running 0 30svanus-gateway-5fd85c7c-vnzcw 1/1 Running 0 30svanus-store-0 1/1 Running 0 30svanus-store-1 1/1 Running 0 30svanus-store-2 1/1 Running 0 30svanus-trigger-75cb74dbbf-k8jsm 1/1 Running 0 30s} For more details, please see Vanus core repo.</description>
-    </item>
-    
-    <item>
-      <title>Architecture</title>
-      <link>https://oscardelrio.es/web/test/K09kFl5A49vB/resources/architecture/</link>
-      <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://oscardelrio.es/web/test/K09kFl5A49vB/resources/architecture/</guid>
-      <description>Vanus Architecture Vanus is mainly composed of Vanus core and Vance. Vanus core includes Segment Server, Trigger, and Controller, which are mainly used for event subscription/publishing, storage, computing, and triggering serverless workloads. Vance consists of Source Connector, Sink Connector, and Connector Serverless Engine, which are used to connect events from cloud services, databases, IoT, and other systems to the Vanus, and then deliver them to user workloads or SaaS systems after processing.</description>
-    </item>
-    
-  </channel>
-</rss>
