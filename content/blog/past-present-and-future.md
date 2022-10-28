@@ -1,5 +1,5 @@
 ---
-title: The Past, Present and Future of Message Queue
+title: aThe Past, Present and Future of Message Queue
 description: 本文以互联网的发展为主线，用叙事的方式向读者再现了消息系统从诞生至今的发展历史。从1983年开始，消息系统经历了不同历史时期的历练与打磨，它们的使用方式、功能特性、产品形态、应用场景都发生了非常大的变化。作者选取了五款不同时代的代表性作品，描述了这些产品诞生的历史背景，立足解决的核心问题，并尝试分析它们取得成功的关键因素。最后作者给出了在Serverless时代的三个断言，并指出了当前消息系统在解决Serverless场景存在的核心痛点，展望了未来消息产品应该具备的关键能力。
 type: blog
 layout: single
