@@ -83,8 +83,10 @@
     border-radius: 50%;
     padding: 5px;
   }
-  .featured-button.arrow-hide:after{
-    display: none;
+  &.arrow-hide{
+    &:after{
+      display: none;
+    }
   }
   &::before{
     content: "";

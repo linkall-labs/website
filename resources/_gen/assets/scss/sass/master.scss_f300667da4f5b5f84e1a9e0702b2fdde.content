@@ -9631,7 +9631,7 @@ template {
     background: white;
     border-radius: 50%;
     padding: 5px; }
-  .featured-button .featured-button.arrow-hide:after {
+  .featured-button.arrow-hide:after {
     display: none; }
   .featured-button::before {
     content: "";
