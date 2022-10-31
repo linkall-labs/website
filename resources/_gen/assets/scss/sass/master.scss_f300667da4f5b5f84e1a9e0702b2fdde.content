@@ -10722,8 +10722,7 @@ footer {
       padding: 30px 0;
       margin-bottom: 30px; }
     .post .post-body .post-body-content img {
-      width: 100%;
-      margin: 60px 0; }
+      width: 100%; }
   .post .post-body .post-categories {
     width: 300px; }
   .post .post-body .post-sidebar {
