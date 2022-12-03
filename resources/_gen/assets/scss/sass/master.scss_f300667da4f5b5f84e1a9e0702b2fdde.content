@@ -9767,8 +9767,6 @@ template {
         font-weight: 600; }
         .header .header-wrapper .header-git .header-git-item#git-fork {
           display: none; }
-        .header .header-wrapper .header-git .header-git-item#git-star {
-          display: flex; }
     .header .header-wrapper .header-social {
       margin-right: 15px; }
       @media (max-width: 992px) {
